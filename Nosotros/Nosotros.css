@@ -28,6 +28,9 @@ p{
     color: #000000;
     text-shadow: none;
 }
+#p2{
+    font-size: 10px;
+}
 
 .contenido1{
     font-family: 'Montserrat', sans-serif;
@@ -38,7 +41,10 @@ p{
 }
 
 .a1{
-    color:#000000;
+    color:#000353;
     text-decoration: none;
     pointer-events: all;
+    font-size: 10px;
+    font-family:'Montserrat', sans-serif;
+    font-weight: bold;
 }
