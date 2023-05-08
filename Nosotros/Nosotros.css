@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(234, 232, 198);
+    background-color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
 }
@@ -35,4 +35,10 @@ p{
 }
 .contenido1 h3{
     text-shadow: 0 0 2.5px #000000;
+}
+
+.a1{
+    color:#000000;
+    text-decoration: none;
+    pointer-events: all;
 }
