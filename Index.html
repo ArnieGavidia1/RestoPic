@@ -6,9 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Reestopic Restaurant 2023</title>
+   
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
     <main> </main>
     
+
+
+
+
+
+
+
+    <!-- Formulario -->    
+    <!-- inmolementrar boostrap -->
+
+    <div class="container datos">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h5>INGRESA TUS DATOS Y PARTICIPA PARA UN CUPON DE DESCUENTO DE S/50</h5>
+                    <form id="formulario">
+                        <div class="form-group">
+                            <input id="nombre" type="text" class="form-control" name="name"
+                                placeholder="Ingresa tu nombre" autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="apellido" type="text" class="form-control" name="surname"
+                                placeholder="Ingresa tus apellidos" autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="correo" type="email" class="form-control" name="correo"
+                                placeholder="Ingresa tu E-mail" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input id="numero" type="number" class="form-control" name="numero"
+                                placeholder="Ingresa tu numero" autofocus>
+                        </div>
+
+                        <br>
+
+                        <button id="btnSend" onclick="envio()" class="envio">Enviar</button>
+                        <div id="container" class="" col-md-12>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="module">
+
+ // Import the functions you need from the SDKs you need
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+  import {getFirestore,collection, addDoc } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB5tjTRtXPZ6TM3zaA_LUTmGA0Gd04qTvU",
+  authDomain: "restopic.firebaseapp.com",
+  projectId: "restopic",
+  storageBucket: "restopic.appspot.com",
+  messagingSenderId: "42100572483",
+  appId: "1:42100572483:web:1ae3d1f4f9ca652d4f6ff6",
+  measurementId: "G-16TTGEXMFS"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+var formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", async (eve) => {
+    eve.preventDefault();
+
+
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var correo = document.getElementById("correo").value;
+    var numero = document.getElementById("numero").value;
+
+
+    try {
+        const docRef = await addDoc(collection(db, "usuario"), {
+            nombre: nombre,
+            apellido: apellido,
+            correo: correo,
+            numero: numero
+
+        });
+
+        console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
+})
+</script>
+
+
+   
+
+
+
+
+
+
 </body>
 </html>
