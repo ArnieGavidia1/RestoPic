@@ -1,7 +1,17 @@
-*{
+* {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
+}
+
+
+:root{
+    --color-1:#ff3535;
+    --color-2:#dbc4c4;
+    --color-header: #50505083;
+    --color-fondo: #000000;
+    --color-texto-1: #ffffff;
+    --color-texto-2: #ffd000;
+    --color-texto-3: #ff3535;
 }
 .titulo_rest{
     text-align: center;
@@ -12,6 +22,49 @@
 }
 .imagen-2{
     text-align: center;
+}
+/*HEADER*/
+.header{
+    background: var(--color-header);
+    width: 100%;
+    height: 75px;
+    display: flex;
+    border-bottom: solid 2px var(--color-header-borde);
+}
+
+.header-logo{
+    width: 30%;
+}
+
+
+
+.logo{
+    object-fit: cover;
+    height: 100%;
+    padding: 20px 30px;
+
+}
+
+.nav{
+    width: 70%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 50px;
+}
+.link{
+    text-decoration: none;
+    color: var(--color-texto-1);
+    margin: 1% 3%;
+    font-size: 1.2em;
+
+}
+
+.link:hover{
+    text-decoration: none;
+    color: var(--color-texto-3);
+    
+
 }
 /** Para el pie de pagina **/
 .container2{
